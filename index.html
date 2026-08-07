@@ -239,7 +239,7 @@ footer .eyebrow{font-size:10.5px}
     <div class="heroflex">
       <div class="heromain">
         <h1>Ioannis <em>(John)</em><br>Rizos</h1>
-        <p class="altname">PUBLISHING AS J. RIZOS &nbsp;·&nbsp; ORCID 0000-0001-7586-1700</p>
+        <p class="altname">PUBLISHING AS J. RIZOS: &nbsp;·&nbsp; ORCID 0000-0001-7586-1700</p>
         <p class="role">
           Professor of Theoretical Physics.
         </p>
@@ -437,20 +437,13 @@ footer .eyebrow{font-size:10.5px}
       for(var x = step; x < w; x += step){
         // deterministic pseudo-random so the field is stable across redraws
         var n = Math.abs(Math.sin(x * 12.9898 + y * 78.233) * 43758.5453) % 1;
-        var viable = n > 0.9975;
+        var viable = n > 0.9994;
         ctx.beginPath();
-        ctx.arc(x, y, viable ? 2.6 : r, 0, 6.2832);
+        ctx.arc(x, y, viable ? 2.0 : r, 0, 6.2832);
         ctx.fillStyle = viable
-          ? 'rgba(235,215,168,.92)'
-          : 'rgba(190,214,222,' + (0.10 + n * 0.16).toFixed(3) + ')';
+          ? 'rgba(235,215,168,.95)'
+          : 'rgba(198,220,228,' + (0.16 + n * 0.20).toFixed(3) + ')';
         ctx.fill();
-        if(viable){
-          ctx.beginPath();
-          ctx.arc(x, y, 7, 0, 6.2832);
-          ctx.strokeStyle = 'rgba(235,215,168,.28)';
-          ctx.lineWidth = 1;
-          ctx.stroke();
-        }
       }
     }
   }
